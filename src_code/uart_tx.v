@@ -11,7 +11,7 @@ module uart_tx #(
     input  wire s_tick,         // Sample tick from baud generator
     input wire [DBIT_WIDTH-1:0] data_in,   // Data to be transmitted
     output reg  tx_done_tick,   // Transmission done pulse
-    output reg tx               // Serial data output
+    output wire tx               // Serial data output
 );
 
 localparam [1:0] IDLE  = 2'b00,

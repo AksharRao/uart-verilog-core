@@ -11,7 +11,7 @@ module uart_top #(
     output wire [7:0]  r_data,
     output wire        tx_full,
     output wire        rx_empty,
-    input  wire [10:0] dvsr,
+    input  wire [15:0] dvsr,
     output wire        tx,
     input  wire        rx
 );
