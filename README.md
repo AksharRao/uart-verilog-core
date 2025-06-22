@@ -43,19 +43,20 @@ graph TD
 
 ## Block Diagram
 
+```mermaid
 graph TD
     %% Clock and Baud Rate Generation
     clk --> BRG["baud rate generator"]
     BRG -->|tick| TX["transmitter"]
     BRG -->|s_tick| RX["receiver"]
-    
+
     %% Transmitter Section
     TX -->|tx| TX_OUT["tx (serial out)"]
     TX -->|tx_done_tick| TX_FIFO
     TX_FIFO["FIFO (TX)"] -->|w_data| TX
     TX_FIFO -->|wr| WR_TX["wr_uart (input)"]
     TX_FIFO -->|full| STATUS_TX["tx_full (status)"]
-    
+
     %% Receiver Section
     RX_IN["rx (serial in)"] --> RX
     RX -->|dout| RX_FIFO["FIFO (RX)"]
@@ -63,6 +64,7 @@ graph TD
     RX_FIFO -->|r_data| DATA_OUT["r_data (output)"]
     RX_FIFO -->|rd| RD_RX["rd_uart (input)"]
     RX_FIFO -->|empty| STATUS_RX["rx_empty (status)"]
+```
 
 ## Parameters
 
