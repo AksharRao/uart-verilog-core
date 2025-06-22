@@ -6,7 +6,7 @@
 ## Table of Contents
 - [Features](#features)
 - [Module Hierarchy](#module-hierarchy)
-- [Block Diagram/ASCII Representation](#Block-diagram)
+- [Block Diagram](#Block-diagram)
 - [Parameters](#parameters)
 - [Interface Signals](#interface-signals)
 - [Simulation with Icarus Verilog](#simulation-with-icarus-verilog)
@@ -41,7 +41,7 @@ graph TD
     TOP --> FIFO_RX[fifo_rx]
 ```
 
-## Block Diagram/ASCII Representation
+## Block Diagram
 
 graph TD
     %% Clock and Baud Rate Generation
@@ -63,20 +63,6 @@ graph TD
     RX_FIFO -->|r_data| DATA_OUT["r_data (output)"]
     RX_FIFO -->|rd| RD_RX["rd_uart (input)"]
     RX_FIFO -->|empty| STATUS_RX["rx_empty (status)"]
-
-### ASCII
-
-[clk] → [baud rate generator]
-               ↓
-        +------+------+
-        ↓             ↓
-[Transmitter]    [Receiver]
-   ↑    |             ↑  |
-   |    ↓             |  ↓
-[TX FIFO]          [RX FIFO]
-   ↑                    ↓
-wr, w_data           rd, r_data
-(full)               (empty)
 
 ## Parameters
 
