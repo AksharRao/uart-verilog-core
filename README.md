@@ -12,7 +12,6 @@
 - [Simulation with Icarus Verilog](#simulation-with-icarus-verilog)
 - [Synthesis Notes](#synthesis-notes)
 - [Configuration Examples](#configuration-examples)
-- [License](#license)
 
 ## Features
 
@@ -197,7 +196,3 @@ uart_top #(
     // ... other connections
 );
 ```
-
-## License
-
-MIT License. Free for academic and commercial use.
